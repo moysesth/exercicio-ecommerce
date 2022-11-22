@@ -8,6 +8,7 @@ import { PedidoListComponent } from './paginas/pedido-list/pedido-list.component
 import { PortfolioComponent } from './paginas/portfolio/portfolio.component';
 import { SobreComponent } from './paginas/sobre/sobre.component';
 import { ProdutoListComponent } from './paginas/produto/produto.component';
+import { AddProdutoComponent } from './paginas/produto/addProduto/addProduto.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,10 +16,11 @@ const routes: Routes = [
   { path: 'sobre', component: SobreComponent },
   { path: 'form', component: FormComponent },
   { path: 'form-alterar/:id', component: FormComponent },
-  { path: 'contatos', component: ContactListComponent },  
+  { path: 'clientes', component: ContactListComponent },  
   { path: 'pedidos', component: PedidoListComponent },  
   { path: 'produtos', component: ProdutoListComponent },
   { path: '**', component: NaoEncontradaComponent },
+  { path: 'produtos/adicionar-produto', component: AddProdutoComponent },
 ];
 
 @NgModule({

@@ -19,6 +19,7 @@ import { SobreComponent } from './paginas/sobre/sobre.component';
 import { NaoEncontradaComponent } from './paginas/nao-encontrada/nao-encontrada.component';
 import { PedidoListComponent } from './paginas/pedido-list/pedido-list.component';
 import { ProdutoListComponent } from './paginas/produto/produto.component';
+import { AddProdutoComponent } from './paginas/produto/addProduto/addProduto.component';
 
 registerLocaleData(ptBr);
 
@@ -37,6 +38,7 @@ registerLocaleData(ptBr);
     NaoEncontradaComponent,
     PedidoListComponent,
     ProdutoListComponent,
+    AddProdutoComponent,
   ],
   imports: [
     BrowserModule,

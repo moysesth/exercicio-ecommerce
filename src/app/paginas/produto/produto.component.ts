@@ -21,8 +21,8 @@ export class ProdutoListComponent implements OnInit {
   
   public produtos:Produto[] = ProdutoServico.buscaProdutos()
 
-  novo(){
-    this.router.navigateByUrl("/form")
+  novoProduto(){
+    this.router.navigateByUrl("/produtos/adicionar-produto")
   }
 
   addCarrinho(produto:Produto){

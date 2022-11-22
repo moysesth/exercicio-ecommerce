@@ -1,9 +1,4 @@
 export interface Cliente {
-    id: Number
+    idCliente: Number
     nome: String
-    telefone: Number
-    endereco: String
-    data: Date
-    valor: Number
-    cpf: String
 }

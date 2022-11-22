@@ -15,9 +15,19 @@
                 <form id="contactForm">
                     <!-- Name input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="nome" name="nome" type="text" [(ngModel)]="cliente.nome" placeholder="Digite o seu nome...">
+                        <input class="form-control" id="nome" name="nome" type="text" [(ngModel)]="produto.nome" placeholder="Digite o seu nome...">
                         <label for="nome">Nome</label>
                     </div>
+                    <!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="descricao" name="descricao" type="text" [(ngModel)]="produto.descricao" placeholder="Descreva o produto">
+                        <label for="email">Endereço</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="preco" name="precoPlugin" type="text" currencyMask [(ngModel)]="precoPlugin" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"  placeholder="Digite o preco Plugin">
+                        <label for="email">Preço Plugin</label>
+                    </div>
+
                     <button class="btn btn-primary btn-xl" id="submitButton" type="button" (click)="salvar()">Enviar</button>
                 </form>
             </div>

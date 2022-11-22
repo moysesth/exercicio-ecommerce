@@ -2,12 +2,12 @@ import { Cliente } from "../models/cliente";
 
 export class ClienteServico{
 
-    static buscaClientePorId(id: Number): Cliente {
+    static buscaClientePorId(idCliente: Number): Cliente {
         let cliente:Cliente = {} as Cliente
 
         for(let i=0; i<ClienteServico.clientes.length; i++){
             let clienteDb = ClienteServico.clientes[i]
-            if(clienteDb.id == id){
+            if(clienteDb.idCliente == idCliente){
                 cliente = clienteDb
                 break
             }
@@ -17,13 +17,8 @@ export class ClienteServico{
     }
 
     private static clientes: Cliente[] = [{
-        id: 1,
+        idCliente: 1,
         nome: "Luana",
-        telefone: 1212111-1111,
-        endereco: "Rua teste",
-        data: new Date(),
-        valor: 22.22,
-        cpf: "333.222.222-33"
     }]
 
     public static buscaClientes():Cliente[]{
@@ -31,14 +26,14 @@ export class ClienteServico{
     }
 
     public static adicionaCliente(cliente:Cliente):void{
-        cliente.id = ClienteServico.buscaClientes().length + 1
+        cliente.idCliente = ClienteServico.buscaClientes().length + 1
         ClienteServico.clientes.push(cliente)
     }
 
     public static alteraCliente(cliente:Cliente):void{
         for(let i=0; i<ClienteServico.clientes.length; i++){
             let clienteDb = ClienteServico.clientes[i]
-            if(clienteDb.id == cliente.id){
+            if(clienteDb.idCliente == cliente.idCliente){
                 clienteDb = {
                     ...cliente
                 }
@@ -51,7 +46,7 @@ export class ClienteServico{
         let listaNova = []
         for(let i=0; i<ClienteServico.clientes.length; i++){
             let clienteDb = ClienteServico.clientes[i]
-            if(clienteDb.id != cliente.id){
+            if(clienteDb.idCliente != cliente.idCliente){
                 listaNova.push(clienteDb)
             }
         }

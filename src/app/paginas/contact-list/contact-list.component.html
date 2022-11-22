@@ -20,29 +20,19 @@
             <div *ngIf="clientes.length == 0" class="alert alert-primary" role="alert">
                 Não existe clientes cadastrados
             </div>
-            <table *ngIf="clientes.length > 0" class="table">
+            <table *ngIf="clientes.length > 0" class="table text-center">
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">ID do Cliente</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">CPF</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Endereço</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Valor</th>
                     <th scope="col" colspan="2">Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let cliente of clientes">
-                    <th scope="row">{{cliente.id}}</th>
+                    <th scope="row">{{cliente.idCliente}}</th>
                     <td>{{cliente.nome}}</td>
-                    <td>{{cliente.cpf}}</td>
-                    <td>{{cliente.telefone | formatarTelefone}}</td>
-                    <td>{{cliente.endereco}}</td>
-                    <td>{{cliente.data | date: 'dd/MM/yyyy'}}</td>
-                    <td>{{cliente.valor.toString() | currency }}</td>
-                    <td><a class="btn btn-warning" routerLink="/form-alterar/{{cliente.id}}">Alterar</a></td>
+                    <td><a class="btn btn-warning" routerLink="/form-alterar/{{cliente.idCliente}}">Alterar</a></td>
                     <td><button class="btn btn-danger" (click)="excluir(cliente)">Excluir</button></td>
                   </tr>
                 </tbody>

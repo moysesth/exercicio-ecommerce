@@ -23,33 +23,26 @@ export class FormComponent implements OnInit {
   public valorPlugin:String = ""
 
   ngOnInit(): void {
-    let id:Number = this.routerParams.snapshot.params['id']
-    if(id){
+    let idCliente:Number = this.routerParams.snapshot.params['idCliente']
+    if(idCliente){
       this.titulo = "Alterando cliente"
-      this.cliente = ClienteServico.buscaClientePorId(id)
-      this.valor = this.cliente.valor.toString()
+      this.cliente = ClienteServico.buscaClientePorId(idCliente)
     }
   }
 
   salvar(){
-    if(this.cliente.id > 0){
-      this.cliente.valor = this.convertNumber(this.valor)
+    if(this.cliente.idCliente > 0){
       ClienteServico.alteraCliente(this.cliente)
     }
     else{
       ClienteServico.adicionaCliente({
-        id: 0,
+        idCliente: 0,
         nome: this.cliente.nome,
-        telefone: 11999999999,
-        endereco: this.cliente.endereco,
-        data: new Date(),
-        valor: this.convertNumber(this.valor),
-        cpf: "33333333333"
       });
     }
 
     this.clienteObserverServicoService.atualizaQuantidade();
-    this.router.navigateByUrl("/contatos")
+    this.router.navigateByUrl("/clientes")
   }
 
   private convertNumber(valor:String): Number{
